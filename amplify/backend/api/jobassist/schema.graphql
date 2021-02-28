@@ -1,0 +1,248 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+type ModelExtracurricularConnection {
+  items: [extracurriculars]
+  nextToken: String
+}
+
+type Mutation {
+  createExtracurriculars(input: CreateExtracurricularInput): extracurriculars
+  deleteExtracurriculars(input: DeleteExtracurricularsInput): extracurriculars
+  updateExtracurriculars(input: UpdateExtracurricularInput): extracurriculars
+}
+
+type Query {
+  getExtracurricular(id: String!): extracurriculars
+  listExtracurriculars(filter: ModelExtracurricularFilterInput, limit: Int, nextToken: String): [extracurriculars]
+}
+
+type extracurriculars {
+  AcceptanceRate: String
+  AgeRestrictions: String
+  ApplicationProcess: String
+  Club_Name: String
+  Cost: String
+  DailyCommitment: String
+  Description: String
+  Description_URL: String
+  ExpectedMajor: String
+  Location: String
+  Online: String
+  Salary: String
+  Seasonal_or_Annual: String
+  Subjects: String
+  Tags: String
+  Type: String
+  TypeofEmployment: String
+  Weekdays: String
+  WeeklyCommitment: String
+  id: String
+}
+
+enum ModelAttributeTypes {
+  _null
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+enum Status {
+  APPLIED
+  INTERVIEWING
+  TAKE_HOME_ASSIGNMENT
+  TRACKING
+}
+
+input CreateExtracurricularInput {
+  AcceptanceRate: String
+  AgeRestrictions: String
+  ApplicationProcess: String
+  Club_Name: String
+  Cost: String
+  DailyCommitment: String
+  Description: String
+  Description_URL: String
+  ExpectedMajor: String
+  Location: String
+  Online: String
+  Salary: String
+  Seasonal_or_Annual: String
+  Subjects: String
+  Tags: String
+  Type: String
+  TypeofEmployment: String
+  Weekdays: String
+  WeeklyCommitment: String
+  id: String!
+}
+
+input DeleteExtracurricularsInput {
+  id: String!
+}
+
+input ModelBooleanInput {
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  eq: Boolean
+  ne: Boolean
+}
+
+input ModelExtracurricularConditionInput {
+  AcceptanceRate: ModelStringInput
+  AgeRestrictions: ModelStringInput
+  ApplicationProcess: ModelStringInput
+  Club_Name: ModelStringInput
+  Cost: ModelStringInput
+  DailyCommitment: ModelStringInput
+  Description: ModelStringInput
+  Description_URL: ModelStringInput
+  ExpectedMajor: ModelStringInput
+  Location: ModelStringInput
+  Online: ModelStringInput
+  Salary: ModelStringInput
+  Seasonal_or_Annual: ModelStringInput
+  Subjects: ModelStringInput
+  Tags: ModelStringInput
+  Type: ModelStringInput
+  TypeofEmployment: ModelStringInput
+  Weekdays: ModelStringInput
+  WeeklyCommitment: ModelStringInput
+  and: [ModelExtracurricularConditionInput]
+  id: ModelStringInput!
+  not: [ModelExtracurricularConditionInput]
+  or: [ModelExtracurricularConditionInput]
+}
+
+input ModelExtracurricularFilterInput {
+  AcceptanceRate: ModelStringInput
+  AgeRestrictions: ModelStringInput
+  ApplicationProcess: ModelStringInput
+  Club_Name: ModelStringInput
+  Cost: ModelStringInput
+  DailyCommitment: ModelStringInput
+  Description: ModelStringInput
+  Description_URL: ModelStringInput
+  ExpectedMajor: ModelStringInput
+  Location: ModelStringInput
+  Online: ModelStringInput
+  Salary: ModelStringInput
+  Seasonal_or_Annual: ModelStringInput
+  Subjects: ModelStringInput
+  Tags: ModelStringInput
+  Type: ModelStringInput
+  TypeofEmployment: ModelStringInput
+  Weekdays: ModelStringInput
+  WeeklyCommitment: ModelStringInput
+  and: [ModelExtracurricularFilterInput]
+  id: ModelStringInput!
+  not: [ModelExtracurricularFilterInput]
+  or: [ModelExtracurricularFilterInput]
+}
+
+input ModelFloatInput {
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  between: [Float]
+  eq: Float
+  ge: Float
+  gt: Float
+  le: Float
+  lt: Float
+  ne: Float
+}
+
+input ModelIDInput {
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  beginsWith: ID
+  between: [ID]
+  contains: ID
+  eq: ID
+  ge: ID
+  gt: ID
+  le: ID
+  lt: ID
+  ne: ID
+  notContains: ID
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  between: [Int]
+  eq: Int
+  ge: Int
+  gt: Int
+  le: Int
+  lt: Int
+  ne: Int
+}
+
+input ModelSizeInput {
+  between: [Int]
+  eq: Int
+  ge: Int
+  gt: Int
+  le: Int
+  lt: Int
+  ne: Int
+}
+
+input ModelStatusInput {
+  eq: Status
+  ne: Status
+}
+
+input ModelStringInput {
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  beginsWith: String
+  between: [String]
+  contains: String
+  eq: String
+  ge: String
+  gt: String
+  le: String
+  lt: String
+  ne: String
+  notContains: String
+  size: ModelSizeInput
+}
+
+input UpdateExtracurricularInput {
+  AcceptanceRate: String
+  AgeRestrictions: String
+  ApplicationProcess: String
+  Club_Name: String
+  Cost: String
+  DailyCommitment: String
+  Description: String
+  Description_URL: String
+  ExpectedMajor: String
+  Location: String
+  Online: String
+  Salary: String
+  Seasonal_or_Annual: String
+  Subjects: String
+  Tags: String
+  Type: String
+  TypeofEmployment: String
+  Weekdays: String
+  WeeklyCommitment: String
+  id: String!
+}

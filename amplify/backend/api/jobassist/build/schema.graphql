@@ -1,0 +1,207 @@
+type Listing {
+  id: ID!
+  title: String!
+  company: String!
+  url: String!
+  status: Status!
+  favorite: Boolean!
+  notes: String
+  relatedDate: String
+  contactName: String
+  contactEmail: String
+  contactPhoneNumber: String
+  createdAt: String
+  updatedAt: String
+}
+
+enum Status {
+  APPLIED
+  TRACKING
+  INTERVIEWING
+  TAKE_HOME_ASSIGNMENT
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelListingConnection {
+  items: [Listing]
+  nextToken: String
+}
+
+input ModelStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelBooleanInput {
+  ne: Boolean
+  eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+}
+
+input ModelStatusInput {
+  eq: Status
+  ne: Status
+}
+
+input ModelListingFilterInput {
+  id: ModelIDInput
+  title: ModelStringInput
+  company: ModelStringInput
+  url: ModelStringInput
+  status: ModelStatusInput
+  favorite: ModelBooleanInput
+  notes: ModelStringInput
+  relatedDate: ModelStringInput
+  contactName: ModelStringInput
+  contactEmail: ModelStringInput
+  contactPhoneNumber: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelListingFilterInput]
+  or: [ModelListingFilterInput]
+  not: ModelListingFilterInput
+}
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
+}
+
+type Query {
+  getListing(id: ID!): Listing
+  listListings(filter: ModelListingFilterInput, limit: Int, nextToken: String): ModelListingConnection
+}
+
+input CreateListingInput {
+  id: ID
+  title: String!
+  company: String!
+  url: String!
+  status: Status!
+  favorite: Boolean!
+  notes: String
+  relatedDate: String
+  contactName: String
+  contactEmail: String
+  contactPhoneNumber: String
+  createdAt: String
+  updatedAt: String
+}
+
+input UpdateListingInput {
+  id: ID!
+  title: String
+  company: String
+  url: String
+  status: Status
+  favorite: Boolean
+  notes: String
+  relatedDate: String
+  contactName: String
+  contactEmail: String
+  contactPhoneNumber: String
+  createdAt: String
+  updatedAt: String
+}
+
+input DeleteListingInput {
+  id: ID
+}
+
+type Mutation {
+  createListing(input: CreateListingInput!, condition: ModelListingConditionInput): Listing
+  updateListing(input: UpdateListingInput!, condition: ModelListingConditionInput): Listing
+  deleteListing(input: DeleteListingInput!, condition: ModelListingConditionInput): Listing
+}
+
+input ModelListingConditionInput {
+  title: ModelStringInput
+  company: ModelStringInput
+  url: ModelStringInput
+  status: ModelStatusInput
+  favorite: ModelBooleanInput
+  notes: ModelStringInput
+  relatedDate: ModelStringInput
+  contactName: ModelStringInput
+  contactEmail: ModelStringInput
+  contactPhoneNumber: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelListingConditionInput]
+  or: [ModelListingConditionInput]
+  not: ModelListingConditionInput
+}

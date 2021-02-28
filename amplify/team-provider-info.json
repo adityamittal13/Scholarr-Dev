@@ -1,0 +1,30 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-job-assist-dev-204906-authRole",
+      "UnauthRoleArn": "arn:aws:iam::059328374339:role/amplify-job-assist-dev-204906-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::059328374339:role/amplify-job-assist-dev-204906-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-job-assist-dev-204906-deployment",
+      "UnauthRoleName": "amplify-job-assist-dev-204906-unauthRole",
+      "StackName": "amplify-job-assist-dev-204906",
+      "StackId": "arn:aws:cloudformation:us-east-1:059328374339:stack/amplify-job-assist-dev-204906/5414e110-61ed-11eb-b474-0a251432b66d",
+      "AmplifyAppId": "d3sba2qhkxihrc"
+    },
+    "categories": {
+      "function": {
+        "jobassist96e15723DefineAuthChallenge": {},
+        "jobassist96e15723CreateAuthChallenge": {},
+        "jobassist6a6a3830CustomMessage": {
+          "REDIRECTURL": "https://neuralyte.ai/scholarr.html",
+          "EMAILSUBJECT": "Confirmation Email - Scholarr",
+          "EMAILMESSAGE": "Please confirm your email address."
+        }
+      },
+      "auth": {
+        "jobassist3f90f2f3": {},
+        "jobassist8b1be0cb": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-job-assist-dev-204906-authRole",
+      "UnauthRoleArn": "arn:aws:iam::059328374339:role/amplify-job-assist-dev-204906-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::059328374339:role/amplify-job-assist-dev-204906-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-job-assist-dev-204906-deployment",
+      "UnauthRoleName": "amplify-job-assist-dev-204906-unauthRole",
+      "StackName": "amplify-job-assist-dev-204906",
+      "StackId": "arn:aws:cloudformation:us-east-1:059328374339:stack/amplify-job-assist-dev-204906/5414e110-61ed-11eb-b474-0a251432b66d",
+      "AmplifyAppId": "d3sba2qhkxihrc"
+    }
+  },
+  "auth": {
+    "jobassistbaeff0a6": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  },
+  "api": {
+    "jobassist": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "output": {
+        "securityType": "AMAZON_COGNITO_USER_POOLS",
+        "GraphQLAPIIdOutput": "lgjs4yq4qreulkob3frvwmwpwq",
+        "GraphQLAPIEndpointOutput": "https://kft37wqqenhjpochbutvfpcpta.appsync-api.us-east-1.amazonaws.com/graphql"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-job-assist-dev-204906-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apijobassist"
+      },
+      "lastPushTimeStamp": "2021-02-03T06:09:19.168Z",
+      "lastPushDirHash": "piB0as+csJv8e8TGPF10tLcV4H4="
+    }
+  },
+  "function": {
+    "jobassist96e15723DefineAuthChallenge": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "jobassist96e15723CreateAuthChallenge": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "jobassist6a6a3830CustomMessage": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  }
+}
