@@ -1,57 +1,78 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createListing = `mutation CreateListing($input: CreateListingInput!) {
+export const createExtracurriculars = `mutation createExtracurriculars($input: CreateExtracurricularInput) { 
   createListing(input: $input) {
     id
-    title
-    company
-    url
-    status
-    favorite
-    notes
-    relatedDate
-    contactName
-    contactEmail
-    contactPhoneNumber
-    createdAt
-    updatedAt
+    Club_Name
+    Description
+    Type
+    Subjects
+    Tags
+    DailyCommitment
+    WeeklyCommitment
+    Weekdays
+    AgeRestrictions
+    Location
+    Online
+    TypeOfEmployment
+    AcceptanceRate
+    Cost
+    Salary
+    Seasonal_or_Annual
+    ExpectedMajor
+    ApplicationProcess
+    Description_URL
   }
 }
 `;
-export const updateListing = `mutation UpdateListing($input: UpdateListingInput!) {
+export const updateExtracurriculars = `mutation UpdateExtracurriculars($input: UpdateExtracurricularInput) {
   updateListing(input: $input) {
     id
-    title
-    company
-    url
-    status
-    favorite
-    notes
-    relatedDate
-    contactName
-    contactEmail
-    contactPhoneNumber
-    createdAt
-    updatedAt
+    Club_Name
+    Description
+    Type
+    Subjects
+    Tags
+    DailyCommitment
+    WeeklyCommitment
+    Weekdays
+    AgeRestrictions
+    Location
+    Online
+    TypeOfEmployment
+    AcceptanceRate
+    Cost
+    Salary
+    Seasonal_or_Annual
+    ExpectedMajor
+    ApplicationProcess
+    Description_URL
   }
 }
 `;
-export const deleteListing = `mutation DeleteListing($input: DeleteListingInput!) {
+export const deleteExtracurriculars = `mutation deleteExtracurriculars($input: DeleteExtracurricularsInput) {
   deleteListing(input: $input) {
     id
-    title
-    company
-    url
-    status
-    favorite
-    notes
-    relatedDate
-    contactName
-    contactEmail
-    contactPhoneNumber
-    createdAt
-    updatedAt
+    Club_Name
+    Description
+    Type
+    Subjects
+    Tags
+    DailyCommitment
+    WeeklyCommitment
+    Weekdays
+    AgeRestrictions
+    Location
+    Online
+    TypeOfEmployment
+    AcceptanceRate
+    Cost
+    Salary
+    Seasonal_or_Annual
+    ExpectedMajor
+    ApplicationProcess
+    Description_URL
   }
 }
 `;
